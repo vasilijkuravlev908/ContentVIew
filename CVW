@@ -1,0 +1,17 @@
+//
+//  AnchorPreferenceUsage.swift
+//  LearningSwiftUI
+//
+//  Created by Aliaksei Kasyanik on 2.02.23.
+//
+
+import SwiftUI
+
+struct BoundsPreferenceKey: PreferenceKey {
+    typealias Value = Anchor<CGRect>?
+
+    static var defaultValue: Value?
+
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value = nextValue()
+    }
